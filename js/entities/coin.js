@@ -14,6 +14,10 @@ class CoinEntity extends me.Collectable {
                 shapes :[new me.Ellipse(35 / 2, 35 / 2, 35, 35)] // coins are 35x35
             })
         );
+        this.body.setMaxVelocity(13, 15);
+
+
+        // this.body.collisionType = me.collision.types.COIN;
     }
 
     // add a onResetEvent to enable object recycling
@@ -26,12 +30,21 @@ class CoinEntity extends me.Collectable {
     /**
      * collision handling
      */
+
+
+
+
     onCollision(/*response*/) {
 
         // do something when collide
         me.audio.play("cling", false);
+
+        //Clock Up
+
         // give some score
         game.data.score += 250;
+        
+
 
         //avoid further collision and delete it
         this.body.setCollisionMask(me.collision.types.NO_OBJECT);

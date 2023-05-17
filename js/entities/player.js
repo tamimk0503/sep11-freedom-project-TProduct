@@ -35,6 +35,7 @@ class PlayerEntity extends me.Entity {
         me.input.bindKey(me.input.KEY.D,     "right");
         me.input.bindKey(me.input.KEY.W,     "jump", true);
         me.input.bindKey(me.input.KEY.S,     "down");
+        me.input.bindKey(me.input.KEY.SHIFT,     "sprint");
 
         //me.input.registerPointerEvent("pointerdown", this, this.onCollision.bind(this));
         //me.input.bindPointer(me.input.pointer.RIGHT, me.input.KEY.LEFT);
@@ -76,6 +77,18 @@ class PlayerEntity extends me.Entity {
      ** update the force applied
      */
     update(dt) {
+        if (me.input.isKeyPressed("sprint")){
+            this.body.setMaxVelocity(10, 15);
+        }
+        else {
+            this.body.setMaxVelocity(3, 15);
+        }
+
+
+
+
+
+
 
         if (me.input.isKeyPressed("left")){
             if (this.body.vel.y === 0) {
@@ -193,6 +206,13 @@ class PlayerEntity extends me.Entity {
                     return false;
                 }
                 break;
+
+
+
+            // case me.collision.types.COIN:
+
+
+
 
             default:
                 // Do not respond to other objects (e.g. coins)

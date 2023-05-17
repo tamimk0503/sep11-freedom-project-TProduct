@@ -12,7 +12,19 @@ var game = {
     },
 
     // a reference to the texture atlas
-    texture : null
+    texture : null,
+
+    life : {
+        lives: 1
+
+    }
+
+
+
+
+
+
+
 };
 
 export default game;
