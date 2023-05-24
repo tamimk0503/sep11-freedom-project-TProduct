@@ -77,12 +77,13 @@ class PlayerEntity extends me.Entity {
      ** update the force applied
      */
     update(dt) {
-        if (me.input.isKeyPressed("sprint")){
-            this.body.setMaxVelocity(10, 15);
-        }
-        else {
-            this.body.setMaxVelocity(3, 15);
-        }
+        // if (me.input.isKeyPressed("sprint")){
+        //     this.body.setMaxVelocity(10, 15);
+        //     console.log(me.Collectable)
+        // }
+        // else {
+        //     this.body.setMaxVelocity(3, 15);
+        // }
 
 
 
@@ -207,9 +208,12 @@ class PlayerEntity extends me.Entity {
                 }
                 break;
 
+                case me.collision.types.COLLECTABLE_OBJECT:
+                 this.body.setMaxVelocity(10, 15)
+
+                break;
 
 
-            // case me.collision.types.COIN:
 
 
 
